@@ -454,9 +454,9 @@ function fastSend(){
 }
 
 // function plugBot(){
-//     var plugs = [["*Knarv <3*","https://plug.dj/marios-treue-diener/"],["Django","https://plug.dj/-2864672022448580469"],["Kiesel-Stein","https://plug.dj/hinterhof"],["Codeine-Crazy","https://plug.dj/look-at-me-now"]];
+//     var plugs = [["psyPark","https://plug.dj/psypark/"]];
 //     var plugDropDown = document.createElement("li");    
-//     plugDropDown.innerHTML = "<a class='publisher-nav-color'>Plugs: <select id='plugSelect'><option disabled selected value> Auswählen </option>";
+//     plugDropDown.innerHTML = "<a class='publisher-nav-color'><select id='plugSelect'><option disabled selected value> Auswählen </option>";
 //     plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
 //     $(".tab-community").get(0).after(plugDropDown);
 //     for (var i = 0; i<plugs.length;i++){        
