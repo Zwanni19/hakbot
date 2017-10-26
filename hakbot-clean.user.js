@@ -3,8 +3,8 @@
 //@namespace    http://tampermonkey.net/
 //@version      2.4.3
 //@description  Make Disqus great Again
-//@updateURL    https://raw.githubusercontent.com/rapupdate/AnisHakbot/master/Hakbot.user.js
-//@downloadURL  https://raw.githubusercontent.com/rapupdate/AnisHakbot/master/Hakbot.user.js
+//@updateURL    https://raw.githubusercontent.com/Zwanni19/hakbot/master/hakbot-clean.user.js
+//@downloadURL  https://raw.githubusercontent.com/Zwanni19/hakbot/master/hakbot-clean.user.js
 //@author       You
 //@match        https://disqus.com/embed/comments/*
 //@require      https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
@@ -2510,7 +2510,7 @@ function fakeLink(comment,linkNormal,commentHtml){
 			comment.innerHTML=commentHtml;						
 			if(typeof fakeLinkError=='undefined'){
 				if (confirm("Die Domain wurde nicht zum Zugriff zugelassen. Eine Anleitung wie dies zu ändern ist findest du in den FAQ auf:\n'https://github.com/rapupdate/AnisHakbot/blob/master/README.md\nWillst du die Readme in neuem Tab öffnen?")){
-					GM_openInTab("https://github.com/rapupdate/AnisHakbot/blob/master/README.md#faq",{active:true});
+					GM_openInTab("https://github.com/Zwanni19/hakbot/blob/master/README.md#faq",{active:true});
 				}
 				GM_setValue("error",true);
 			}						
