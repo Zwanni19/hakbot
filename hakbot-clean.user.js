@@ -1,5 +1,5 @@
 //==UserScript==
-//@name         RU Bot
+//@name         Disqus Bot
 //@namespace    http://tampermonkey.net/
 //@version      2.4.3
 //@description  Make Disqus great Again
