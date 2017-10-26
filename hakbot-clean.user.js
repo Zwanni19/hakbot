@@ -1,7 +1,7 @@
 //==UserScript==
 //@name         Disqus Bot
 //@namespace    http://tampermonkey.net/
-//@version      2.4.3.1
+//@version      2.4.3.2
 //@description  Make Disqus great Again
 //@updateURL    https://raw.githubusercontent.com/Zwanni19/hakbot/master/hakbot-clean.user.js
 //@downloadURL  https://raw.githubusercontent.com/Zwanni19/hakbot/master/hakbot-clean.user.js
@@ -453,22 +453,22 @@ function fastSend(){
 	}, 1000); 
 }
 
-// function plugBot(){
-//     var plugs = [["psyPark","https://plug.dj/psypark/"],["Test","https://plug.dj/psypark/"]];
-//     var plugDropDown = document.createElement("li");    
-//     plugDropDown.innerHTML = "<a class='publisher-nav-color'>Select: <select id='plugSelect'><option disabled selected value> Auswählen </option>";
-//     plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
-//     $(".tab-community").get(0).after(plugDropDown);
-//     for (var i = 0; i<plugs.length;i++){        
-//         var option = document.createElement("option");
-//         option.innerHTML = plugs[i][0];
-//         option.setAttribute("value",plugs[i][1]);
-//         $("#plugSelect").get(0).append(option);
-//     }    
-//     $("#plugSelect").change(function(){
-//         openPlug(this);
-//     })
-// }
+function plugBot(){
+    var plugs = [["psyPark","https://plug.dj/psypark/"],["Test","https://plug.dj/psyparkl/"]];
+    var plugDropDown = document.createElement("li");    
+    plugDropDown.innerHTML = "<a class='publisher-nav-color'>Select: <select id='plugSelect'><option disabled selected value> Auswählen </option>";
+    plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
+    $(".tab-community").get(0).after(plugDropDown);
+    for (var i = 0; i<plugs.length;i++){        
+        var option = document.createElement("option");
+        option.innerHTML = plugs[i][0];
+        option.setAttribute("value",plugs[i][1]);
+        $("#plugSelect").get(0).append(option);
+    }    
+    $("#plugSelect").change(function(){
+        openPlug(this);
+    })
+}
 
 function openPlug(select){
     link = $( "#plugSelect option:selected" ).attr("value");
