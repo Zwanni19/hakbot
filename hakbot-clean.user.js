@@ -453,22 +453,22 @@ function fastSend(){
 	}, 1000); 
 }
 
-function plugBot(){
-    var plugs = [["*Knarv <3*","https://plug.dj/marios-treue-diener/"],["Django","https://plug.dj/-2864672022448580469"],["Kiesel-Stein","https://plug.dj/hinterhof"],["Codeine-Crazy","https://plug.dj/look-at-me-now"]];
-    var plugDropDown = document.createElement("li");    
-    plugDropDown.innerHTML = "<a class='publisher-nav-color'>Plugs: <select id='plugSelect'><option disabled selected value> Auswählen </option>";
-    plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
-    $(".tab-community").get(0).after(plugDropDown);
-    for (var i = 0; i<plugs.length;i++){        
-        var option = document.createElement("option");
-        option.innerHTML = plugs[i][0];
-        option.setAttribute("value",plugs[i][1]);
-        $("#plugSelect").get(0).append(option);
-    }    
-    $("#plugSelect").change(function(){
-        openPlug(this);
-    })
-}
+// function plugBot(){
+//     var plugs = [["*Knarv <3*","https://plug.dj/marios-treue-diener/"],["Django","https://plug.dj/-2864672022448580469"],["Kiesel-Stein","https://plug.dj/hinterhof"],["Codeine-Crazy","https://plug.dj/look-at-me-now"]];
+//     var plugDropDown = document.createElement("li");    
+//     plugDropDown.innerHTML = "<a class='publisher-nav-color'>Plugs: <select id='plugSelect'><option disabled selected value> Auswählen </option>";
+//     plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
+//     $(".tab-community").get(0).after(plugDropDown);
+//     for (var i = 0; i<plugs.length;i++){        
+//         var option = document.createElement("option");
+//         option.innerHTML = plugs[i][0];
+//         option.setAttribute("value",plugs[i][1]);
+//         $("#plugSelect").get(0).append(option);
+//     }    
+//     $("#plugSelect").change(function(){
+//         openPlug(this);
+//     })
+// }
 
 function openPlug(select){
     link = $( "#plugSelect option:selected" ).attr("value");
