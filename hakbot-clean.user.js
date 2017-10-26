@@ -454,7 +454,7 @@ function fastSend(){
 }
 
 // function plugBot(){
-//     var plugs = [["psyPark","https://plug.dj/psypark/"]];
+//     var plugs = [["psyPark","https://plug.dj/psypark/"],["Test","https://plug.dj/psypark/"]];
 //     var plugDropDown = document.createElement("li");    
 //     plugDropDown.innerHTML = "<a class='publisher-nav-color'><select id='plugSelect'><option disabled selected value> Auswählen </option>";
 //     plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
