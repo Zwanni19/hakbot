@@ -454,7 +454,7 @@ function fastSend(){
 }
 
 function plugBot(){
-    var plugs = [["psyPark","https://plug.dj/psypark/"],["Test","https://plug.dj/psyparkl/"]];
+    var plugs = [["Plug: PsyPark","https://plug.dj/psypark/"],["Rulerboard lel","http://rulerboard.tk/"]];
     var plugDropDown = document.createElement("li");    
     plugDropDown.innerHTML = "<a class='publisher-nav-color'>Select: <select id='plugSelect'><option disabled selected value> Auswählen </option>";
     plugDropDown.setAttribute("class","nav-tab nav-tab--primary tab-community");
