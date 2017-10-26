@@ -1,11 +1,11 @@
 //==UserScript==
 //@name         Disqus Bot
 //@namespace    http://tampermonkey.net/
-//@version      2.4.3
+//@version      2.4.3.1
 //@description  Make Disqus great Again
 //@updateURL    https://raw.githubusercontent.com/Zwanni19/hakbot/master/hakbot-clean.user.js
 //@downloadURL  https://raw.githubusercontent.com/Zwanni19/hakbot/master/hakbot-clean.user.js
-//@author       You
+//@author       Anis_Zwanni corrector
 //@match        https://disqus.com/embed/comments/*
 //@require      https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 //@require      http://benpickles.github.io/peity/jquery.peity.js
@@ -33,7 +33,7 @@
 	//reloadBot - Lädt Diqus immer mal nach, damit wirkt wie ein echter User
 	//Verrückte Scheiße dieser Bot ist riesig und geht jetzt in Verrsion 2.0, krasse sache
 	//=======================================================      
-    console.log("RU-Bot injeziert");	
+    console.log("Bot injeziert");	
 	var checkDisqus = setInterval(function(){		
 		if (document.getElementById("community-tab") && document.getElementsByClassName("nav-secondary").length>0 && document.getElementsByClassName("username").length>0){			
 			GM_addStyle('.editBtn{font-weight: bold;padding:10px;background-color:#737f85;width:40px;height:38px;float:right;}');
@@ -1432,20 +1432,12 @@ function setInterface(botRunning){
                 document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Sneaky Peaky - Zufallszeiten bei Clicks um Menschlich zu wirken"><input type="checkbox" id="natural" '+boxStatusNatural+'><span class="label helper">Natürlicher Modus - zufällige Klickzeiten</span></a><br>';												                
 				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Nie wieder auf Fake RU-Links reinfallen!"><input type="checkbox" id="fakeBot" '+boxStatus+'><span class="label helper">FakeLinks hervorheben (Benötigt XMLHTTP-Requests)</span></a><br>';										
 				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Bunte Bilder im Feed sind schon schön <3"><input type="checkbox" id="embedImages" '+boxStatusEmbed+'><span class="label helper">Bilder automatisch einbetten</span></a><br>';										
-				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Poste nur wenn Quote gut ist!"><input type="checkbox" id="showQuote" '+boxStatusQuote+'><span class="label helper">Hakquote anzeigen</span></a><br>';										
-				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Persönlicher Fetisch"><input type="checkbox" id="quafflesBot" '+boxStatusQuaffles+'><span class="label helper">Darth Qualli Waffles Profilbild auf altes Tony D Bild ändern</span></a><br>';										
-				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Nie wieder zu spät zur Party!"><input type="checkbox" id="checkArticle" '+boxStatusArticle+'><span class="label helper">Auf neue Artikel checken (Benötigt XMLHTTP-Requests)</span></a><br>';										
-				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Weck mich auf wenn neuer Artikel du hont!"><input type="checkbox" id="notifyArticle" '+boxStatusNotify+'><span class="label helper">Benachrichtigung wenn ein neuer Artikel vorhanden ist (Benötigt Auf neue Artikel checken!)</span></a><br>';										
-				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Zack und rüber mit mir!"><input type="checkbox" id="switchArticle" '+boxStatusSwitch+'><span class="label helper">Automatisch auf neuen Artikel wechseln (Benötigt Auf neue Artikel checken!)</span></a><br>';										
+				document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Poste nur wenn Quote gut ist!"><input type="checkbox" id="showQuote" '+boxStatusQuote+'><span class="label helper">Hakquote anzeigen</span></a><br>';									
                 document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Verlinkungen endlich wieder einfach nur eintippen... Puh wie geil ist das denn?"><input type="checkbox" id="clearUrl" '+boxStatusUrl+'><span class="label helper">URLs in Postfähige Form verwandeln</span></a><br>';										
                 document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Es nervt manchmal, aber glaubt mir es ist zu eurem Besten"><input type="checkbox" id="reloadBot" '+boxStatusReload+'><span class="label helper">Reload Bot - Lädt Disqus automatisch neu (Empfohlen!)</span></a><br>';										
                 document.getElementById("settings").innerHTML += '<a class="dropdown-toggle"  title="Wenn natürlicher Modus an ist, werden bis zu 2 Minuten auf diesen Wert raufgerechnet"><span class="label helper">Reload Interval (In Minuten): </span><input type="Number" id="reloadTime" value="'+reloadTime+'" min="1" max="60"></input><input id="setReloadTime" type="button" value="Speichern" style="margin:20px"></input></a><br>';														
 				
-				blacklistDiv.innerHTML += '<hr><br><h3>Über den Hakbot</h3>';						
-				blacklistDiv.innerHTML += '<i>Version: '+GM_info["script"]["version"]+'</i><br>';
-				blacklistDiv.innerHTML += '<i>Autor: <a href="https://disqus.com/by/anis_fencheltee/">Anis Fencheltee</a></i><br>';
-				blacklistDiv.innerHTML += '<i>Readme: <a href="https://github.com/rapupdate/AnisHakbot/blob/master/README.md">Klick hier</i><br>';
-				blacklistDiv.innerHTML += '<i>Probleme oder Wünsche? <a href="https://github.com/rapupdate/AnisHakbot/issues">Klick hier</i><br><br>';
+
 				$('#hakMode').val(mode).change();
 				$("#hakMode").change(function(e){							
 					GM_setValue("hakMode",this.value);
@@ -1577,16 +1569,7 @@ function setInterface(botRunning){
             blacklistButton.setAttribute ('class', 'nav-tab nav-tab--secondary dropdown sorting pull-right');
             blacklistButton.addEventListener('click', function(){toggleBlacklistContainer(this)});
             document.getElementsByClassName("nav-tab--secondary")[0].parentNode.appendChild(blacklistButton);               
-            //=======================================================      
-            //=======================================================
-            //Reload Button wegen Zinkus
-            //=======================================================
-            var blacklistButton = document.createElement ('li');                                    
-            blacklistButton.innerHTML = '<a class="dropdown-toggle" style="cursor: pointer;" title="reloaded Disqus, klick wenn Zinkus"><span class="label">Zinkus?</span></a>';
-            blacklistButton.setAttribute ('id', 'reloadIconContainer');
-            blacklistButton.setAttribute ('class', 'nav-tab nav-tab--secondary dropdown sorting pull-right');           
-            blacklistButton.addEventListener('click', zinkus);
-            document.getElementsByClassName("nav-tab--secondary")[0].parentNode.appendChild(blacklistButton);               
+        
             //=======================================================
             //=======================================================
             //Sets AutoHak Button
